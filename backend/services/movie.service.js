@@ -1,7 +1,7 @@
 const { Movie } = require("../model/movie");
 
 const movieService = {
-  async getAllMoviesByTittle(tittle = "") {
+  async getAllMoviesByTittle() {
     return await Movie.findAll();
   },
 };
