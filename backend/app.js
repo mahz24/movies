@@ -3,6 +3,7 @@ const helmet = require("helmet");
 const compression = require("compression");
 const morgan = require("morgan");
 const dotenv = require("dotenv");
+const cors = require("cors");
 
 dotenv.config({ path: "./config.env" });
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use(helmet());
 app.use(compression());
+app.use(cors());
 
 if (process.env.NODE_ENV === "development") app.use(morgan("dev"));
 else app.use(morgan("combined"));
